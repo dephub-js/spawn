@@ -1,7 +1,7 @@
 {
   "name": "@dephub/spawn",
   "type": "module",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "A lightweight, fluent API for spawning child processes in Node.js with enhanced options and convenience methods",
   "types": "./dist/index.d.ts",
   "main": "./dist/index.js",
