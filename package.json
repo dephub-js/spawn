@@ -1,0 +1,68 @@
+{
+  "name": "@dephub/spawn",
+  "type": "module",
+  "version": "1.0.2",
+  "description": "A lightweight, fluent API for spawning child processes in Node.js with enhanced options and convenience methods",
+  "types": "./dist/index.d.ts",
+  "main": "./dist/index.js",
+  "scripts": {
+    "prepublishOnly": "pnpm lint && pnpm check-types && pnpm build",
+    "release": "pnpm publish",
+    "docs": "lineo md 'src/**/*.ts' --outFile code.md --outDir temp",
+    "check-types": "tsc --noEmit --skipLibCheck",
+    "lint": "eslint . --fix --max-warnings 0",
+    "fmt": "prettier --write .",
+    "clean": "rm -rf dist",
+    "build": "vite build",
+    "dev": "vite build -w --mode development"
+  },
+  "keywords": [
+    "spawn",
+    "child-process",
+    "process",
+    "command",
+    "cli",
+    "fluent",
+    "builder",
+    "typescript",
+    "nodejs",
+    "dephub"
+  ],
+  "author": {
+    "name": "Estarlin R",
+    "email": "dev@estarlincito.com",
+    "url": "https://estarlincito.com"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "files": [
+    "LICENSE",
+    "README.md",
+    "dist"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/dephub-js/spawn#readme",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dephub-js/spawn.git"
+  },
+  "bugs": {
+    "url": "https://github.com/dephub-js/spawn/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "packageManager": "pnpm@10.30.3",
+  "devDependencies": {
+    "@dephub/eslint-ts": "^1.0.2",
+    "@dephub/glob": "^1.0.2",
+    "@dephub/path": "^1.0.2",
+    "@types/node": "^25.3.3",
+    "eslint": "^10.0.2",
+    "prettier": "^3.8.1",
+    "typescript": "^5.9.3",
+    "vite": "^7.3.1",
+    "vite-plugin-dts": "^4.5.4"
+  }
+}
