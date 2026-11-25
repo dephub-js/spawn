@@ -2,7 +2,7 @@ import {
   SpawnBuilder,
   type SpawnOptions,
   type SpawnResult,
-} from './builder.js';
+} from './builder.ts';
 
 /**
  * Executes a command in a child process, mirroring the native Node.js spawn behavior.
@@ -15,11 +15,11 @@ import {
  * @returns A promise resolving to the process SpawnResult (exit code, stdout, stderr).
  * @throws Error if the command is empty or the process fails to start.
  */
-export const spawn = (
+export function spawn(
   command: string,
   args: string[] = [],
   options: Partial<SpawnOptions> = {},
-): Promise<SpawnResult> => {
+): Promise<SpawnResult> {
   if (!command) throw new Error('Command cannot be empty');
 
   const spawner = new SpawnBuilder().command(command);
@@ -31,4 +31,4 @@ export const spawn = (
   }
 
   return spawner.run();
-};
+}

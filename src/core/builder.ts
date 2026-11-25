@@ -1,4 +1,7 @@
-import { type SpawnOptions as NodeSpawnOptions, spawn } from 'child_process';
+import {
+  type SpawnOptions as NodeSpawnOptions,
+  spawn,
+} from 'node:child_process';
 
 export type OptionKeys = keyof SpawnOptions;
 

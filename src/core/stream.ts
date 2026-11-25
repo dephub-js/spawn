@@ -1,4 +1,4 @@
-import { SpawnBuilder, type SpawnOptions } from './builder.js';
+import { SpawnBuilder, type SpawnOptions } from './builder.ts';
 
 /**
  * Executes a command with inherited stdio, streaming output to parent process.
@@ -10,11 +10,11 @@ import { SpawnBuilder, type SpawnOptions } from './builder.js';
  * @returns Promise resolving to process result code only
  * @throws Error if command is empty or process fails
  */
-export const spawnStream = async (
+export async function spawnStream(
   command: string,
   args: string[] = [],
   options: Partial<SpawnOptions> = {},
-): Promise<{ code: number }> => {
+): Promise<{ code: number }> {
   if (!command) throw new Error('Command cannot be empty');
 
   const spawner = new SpawnBuilder().command(command);
@@ -30,4 +30,4 @@ export const spawnStream = async (
   return {
     code,
   };
-};
+}

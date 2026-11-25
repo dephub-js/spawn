@@ -13,6 +13,7 @@ lint:    ; $(RUN) lint          ## Run linter (ESLint/Prettier)
 fmt:     ; $(RUN) fmt           ## Run formater (Prettier)
 test:    ; $(RUN) test $(ARGS)  ## Run test suite
 types:   ; $(RUN) check-types   ## Run TypeScript type checking
+check:   ; $(RUN) check         ## Run TypeScript type checking, ESLint linter, Prettier formater
 clean:   ; $(RUN) clean         ## Remove build artifacts and temp files
 pack:    ; $(RUN) pack          ## Create a package tarball
 docs:    ; $(RUN) docs          ## Generate technical documentation
@@ -31,10 +32,11 @@ l:  lint
 f:  fmt
 t:  test
 ts: types
+ch: check
 c:  clean
 pk: pack
 do: docs
 
 # .PHONY ensures these commands run even if a folder with the same name exists
-.PHONY: release build dev start lint test types clean pack docs install update \
-        i u b d s l f t ts c pk do
+.PHONY: release build dev start lint test types clean pack docs check install update \
+        i u b d s l f t ts ch c pk do

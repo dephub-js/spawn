@@ -2,7 +2,7 @@ import {
   SpawnBuilder,
   type SpawnOptions,
   type SpawnResult,
-} from './builder.js';
+} from './builder.ts';
 
 /**
  * Executes a command silently with piped stdio, returning its SpawnResult.
@@ -12,11 +12,11 @@ import {
  * @returns A promise resolving to the process SpawnResult (code, stdout, stderr).
  * @throws Error if the command fails or is empty.
  */
-export const spawnSilent = (
+export function spawnSilent(
   command: string,
   args: string[] = [],
   options: Partial<SpawnOptions> = {},
-): Promise<SpawnResult> => {
+): Promise<SpawnResult> {
   if (!command) throw new Error('Command cannot be empty');
 
   const spawner = new SpawnBuilder().command(command);
@@ -30,4 +30,4 @@ export const spawnSilent = (
   }
 
   return spawner.run();
-};
+}
